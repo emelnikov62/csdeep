@@ -80,5 +80,4 @@ class AuthRestService(
     @Path("/login-info")
     @Produces(MediaType.APPLICATION_JSON)
     fun getLoginInfo(): UserInformation = userService.getCurrentLoginInfo()
-
 }

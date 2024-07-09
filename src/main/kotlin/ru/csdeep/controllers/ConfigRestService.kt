@@ -23,5 +23,4 @@ class ConfigRestService(
     @Path("/appWindowBackground")
     @Produces(MediaType.TEXT_PLAIN)
     fun getAppWindowBackground() = clientConfig.portalSetting.appWindowBackground
-
 }
