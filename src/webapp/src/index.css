@@ -1,0 +1,48 @@
+@import "primereact/resources/themes/saga-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .start-tile {
+        @apply p-3 max-w-md bg-white rounded-xl shadow-lg h-96 w-64 self-center items-center space-x-4 transition ease-in-out delay-100 hover:scale-105 duration-300 cursor-pointer;
+    }
+
+    .button-start-pane {
+        @apply p-3 bg-white rounded-xl shadow-lg flex items-center space-x-4 transition ease-in-out delay-100 hover:scale-105 duration-300 cursor-pointer;
+    }
+
+    .button-start-pane-disabled {
+        @apply p-3 bg-white rounded-xl shadow-lg flex items-center space-x-4;
+    }
+
+    .button-app {
+        @apply bg-slate-300 hover:!bg-slate-300 !border-slate-300 px-3 py-2 text-gray-900
+    }
+
+    .no-resize {
+        resize: none;
+    }
+}
+
+* {
+    @apply text-sm font-sans text-black
+}
+
+.p-dialog-header, .p-card-header {
+    background: #40beee !important;
+    padding: 0.75rem!important;
+    color: white !important;
+}
+
+.p-password-input {
+    width: 100% !important;
+}
+
+.p-dialog-content {
+    padding-top: 10px !important;
+}

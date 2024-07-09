@@ -1,0 +1,49 @@
+#debug: true
+server:
+  jetty:
+    max-http-form-post-size: 1024MB
+  servlet:
+    session:
+      store-type: none
+
+  error:
+    include-message: ALWAYS
+    include-stacktrace: ALWAYS
+    include-exception: true
+    include-binding-errors: ALWAYS
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  liquibase:
+    change-log: "classpath:db/csdeep-changelog.xml"
+
+csdeep:
+  security:
+    user-property-file:
+      enabled: false
+
+  syslog:
+    enabled: false
+    application-name: CSDEEP
+    server:
+      server-hostname: "192.168.3.57"
+
+#Spring Actuator config
+management:
+  #security:
+    #enabled: false
+  server:
+    port: 8080 #for disable Actuator set up port: -1
+  endpoints:
+    web:
+      base-path: "/monitor"
+      exposure:
+        include: "*"
+        #exclude: "env,beans"
+  endpoint:
+    health:
+      show-details: "always"
+  health:
+    defaults:
+      enabled: false

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ru.csdeep.dao.AuthorityDao">
+    <select id="geAuthoritiesByUser" resultType="ru.csdeep.model.Authority">
+        select a.id "id",
+               a.code "code"
+          from authority a
+          join user_authority ua on ua.id_authority = a.id
+          join users u on u.id = ua.id_user
+         where u.profile = #{profile}
+    </select>
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ru.csdeep.dao.UserDao">
+    <resultMap id="userResultMap" type="ru.csdeep.model.User" autoMapping="true">
+        <id column="u.id" javaType="long"/>
+    </resultMap>
+    <select id="getUser" resultMap="userResultMap">
+        select u.id "id",
+               u.profile "profile",
+               u.password "password",
+               u.name "name",
+               u.surname "surname",
+               u.lastname "lastname",
+               u.active "active",
+               u.email "email",
+               u.ldts "ldts",
+               u.phone "phone",
+               u.birth "birth",
+               u.foto "foto"
+          from users u
+          <where>
+              <if test="profile != null">
+                  and u.profile = #{profile}
+              </if>
+              <if test="password != null">
+                  and u.password = #{password}
+              </if>
+          </where>
+    </select>
+
+    <select id="createUser" resultType="long">
+        insert into users(profile, password, active, ldts)
+        values(#{profile}, 'hash', true, current_date) returning id
+    </select>
+
+    <update id="updateUser">
+        update users set name = #{user.name}, phone = #{user.phone}, birth = #{user.birth}, profile = #{user.phone} where id = #{user.id}
+    </update>
+</mapper>

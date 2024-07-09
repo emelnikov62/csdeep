@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "$public/*": ["../public/*"],
+      "$src/*": ["./*"],
+      "$config/*": ["config/*"],
+      "$store/*": ["store/*"],
+      "$pages/*": ["pages/*"],
+      "$components/*": ["components/*"],
+      "$utils/*": ["utils/*"]
+    },
+  }
+}

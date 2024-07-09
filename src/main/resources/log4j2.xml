@@ -1,0 +1,30 @@
+<Configuration strict="true"
+               xmlns="http://logging.apache.org/log4j/2.0/config"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://logging.apache.org/log4j/2.0/config
+                                   https://raw.githubusercontent.com/apache/logging-log4j2/master/log4j-core/src/main/resources/Log4j-config.xsd">
+    <Properties>
+        <Property name="basePath">./logs/csdeep</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="FILE" fileName="${basePath}/csdeep.log" filePattern="${basePath}/csdeep-%d{yyyy-MM-dd}_%i.log.gz">
+            <PatternLayout pattern="[%date] [%level] %msg [%file:%line] [%logger{100}] [%thread] %n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="30" />
+        </RollingFile>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%date] [%level] %msg [%file:%line] [%logger{100}] [%thread] %n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="CONSOLE" />
+            <AppenderRef ref="FILE" />
+        </Root>
+        <Logger name="ru.csdeep.dao" level="DEBUG"/>
+        <Logger name="ru.csdeep.dao" level="ERROR"/>
+    </Loggers>
+</Configuration>

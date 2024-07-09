@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="CSDEEP"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <title>CSDEEP</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="unsupported_browser" style="display: none; padding: 5px; text-align: center; font-size: 1rem">
+        <div>Ваш браузер <b>устарел</b></div>
+        <div>
+          Используейте последние версии браузеров:
+          <a href="https://www.microsoft.com/ru-ru/edge" title="Microsoft Edge">Microsoft Edge</a>, <a href="https://www.mozilla.org/ru/firefox/new/" title="Firefox">Firefox</a> или аналогичные
+        </div>
+        <script lang="javascript">
+          var element = document.getElementById("unsupported_browser")
+          if (element) {
+            setTimeout(function() {
+              element.style["display"] = "block"
+            }, 10000)
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
