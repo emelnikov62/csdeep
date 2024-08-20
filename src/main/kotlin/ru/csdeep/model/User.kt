@@ -22,7 +22,8 @@ data class User(
     val ldts: LocalDate? = null,
     val phone: String? = null,
     val birth: LocalDate? = null,
-    val foto: ByteArray? = null
+    val foto: ByteArray? = null,
+    val steamID: String? = null
 )
 
 /**

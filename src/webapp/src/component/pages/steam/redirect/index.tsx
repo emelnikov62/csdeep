@@ -1,14 +1,22 @@
 import React from "react";
+import { useLocation } from 'react-router-dom'
 
-class SteamRedirect extends React.Component {
+const SteamRedirect = () => {
+   const search = useLocation().search
+   const searchParams = new URLSearchParams(search)
+   const SteamID = searchParams.get('openid.claimed_id')?.split('/').pop()
    
-    render() {
-       return (
-            <div> ha
-         </div>
-       );
-    }
 
+   for (let element of searchParams.keys()) {
+      console.log(element);
+      console.log(searchParams.get(element));
+  }
+
+  console.log(SteamID)
+
+   return (
+       <div>SteamID: {SteamID}</div>
+   )
 }
 
 export default SteamRedirect;

@@ -67,6 +67,7 @@ class WebSecurityConfig(
                 .antMatchers("/services/api/config/appWindowBackground").permitAll()
                 .antMatchers("/services/api/config/loginInfo").permitAll()
                 .antMatchers("/services/api/config/version").permitAll()
+                .antMatchers("/steam/*").permitAll()
                 .anyRequest().authenticated()
 
             http.authenticationManager(authManager)

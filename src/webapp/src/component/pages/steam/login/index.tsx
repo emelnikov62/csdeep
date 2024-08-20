@@ -1,11 +1,16 @@
 import React from "react";
+import { useEffect, useRef } from "react";
+
 
 class SteamLogin extends React.Component {
-
+    componentDidMount(): void {
+       var form = document.getElementById("form") as HTMLFormElement
+       form.submit()
+    }
     render() {
        return (
             <div>
-               <form id="form" action="https://steamcommunity.com/openid/login" method="post" >
+               <form id="form" action="https://steamcommunity.com/openid/login" method="post" style={{'display':'none'}}>
                   <input  name="openid.identity" value="http://specs.openid.net/auth/2.0/identifier_select"/>
                   <input  name="openid.claimed_id" value="http://specs.openid.net/auth/2.0/identifier_select"/>
                   <input  name="openid.ns" value="http://specs.openid.net/auth/2.0"/>

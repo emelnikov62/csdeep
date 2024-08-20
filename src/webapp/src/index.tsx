@@ -11,6 +11,8 @@ import {HashRouter, Navigate, Route, Routes} from "react-router-dom"
 import {AdminInfoApp} from "$src/apps/Admin/Info/AdminInfoApp";
 import {AdminStartPane} from "$src/apps/Admin/AdminStartPane";
 import {MainPage} from "$src/apps/Main/MainPage";
+import SteamLogin from "$src/component/pages/steam/login"
+import SteamRedirect from "$src/component/pages/steam/redirect"
 
 const root = createRoot(document.getElementById("root") as HTMLElement)
 root.render(
@@ -21,6 +23,8 @@ root.render(
                     <Route path="/" element={<MainPage/>}/>
                     <Route path="/admin" element={<AdminStartPane/>}/>
                     <Route path="/admin/info" element={<AdminInfoApp/>}/>
+                    <Route path="/steam/login" element={<SteamLogin/>}/>
+                    <Route path="/steam/login/redirect" element={<SteamRedirect/>}/>
                     <Route path="*" element={<Navigate replace to="/"/>}/>
                 </Routes>
             </HashRouter>

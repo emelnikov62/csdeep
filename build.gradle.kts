@@ -115,7 +115,7 @@ object TaskConstant {
 object DataSourceDefaultConfig {
     const val PG_DB_URL = "jdbc:postgresql://localhost:5432/postgres?currentSchema=csdeep"
     const val PG_DB_USER = "postgres"
-    const val PG_DB_PWD = "postgres"
+    const val PG_DB_PWD = "312122123"
 }
 
 @Suppress("UndocumentedPublicClass")
